@@ -1,0 +1,5 @@
+*~
+qtcsdr
+moc_*
+ui_*
+*.o

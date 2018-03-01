@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>621</width>
+    <height>391</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>9</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>qtcsdr</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>6</number>
+    </property>
+    <property name="leftMargin">
+     <number>9</number>
+    </property>
+    <property name="topMargin">
+     <number>9</number>
+    </property>
+    <property name="rightMargin">
+     <number>9</number>
+    </property>
+    <property name="bottomMargin">
+     <number>9</number>
+    </property>
+    <item>
+     <widget class="QMySpectrumWidget" name="widgetFFT" native="true"/>
+    </item>
+    <item>
+     <widget class="QWidget" name="widgetControls" native="true">
+      <property name="minimumSize">
+       <size>
+        <width>603</width>
+        <height>159</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>159</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>111</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Frequency:</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="toggleAM">
+       <property name="geometry">
+        <rect>
+         <x>420</x>
+         <y>0</y>
+         <width>61</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>AM</string>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_2">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>80</y>
+         <width>111</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Offset:</string>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="spinFreq">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>0</y>
+         <width>171</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="maximum">
+        <number>1999999999</number>
+       </property>
+       <property name="singleStep">
+        <number>1000</number>
+       </property>
+       <property name="value">
+        <number>89500000</number>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="spinOffset">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>80</y>
+         <width>171</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="minimum">
+        <number>-1200000</number>
+       </property>
+       <property name="maximum">
+        <number>1200000</number>
+       </property>
+       <property name="singleStep">
+        <number>100</number>
+       </property>
+       <property name="value">
+        <number>200000</number>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="toggleWFM">
+       <property name="geometry">
+        <rect>
+         <x>300</x>
+         <y>0</y>
+         <width>61</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>WFM</string>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="toggleUSB">
+       <property name="geometry">
+        <rect>
+         <x>480</x>
+         <y>0</y>
+         <width>61</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>USB</string>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="toggleLSB">
+       <property name="geometry">
+        <rect>
+         <x>540</x>
+         <y>0</y>
+         <width>61</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>LSB</string>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="toggleRun">
+       <property name="geometry">
+        <rect>
+         <x>300</x>
+         <y>80</y>
+         <width>141</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Receive</string>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="toggleNFM">
+       <property name="geometry">
+        <rect>
+         <x>360</x>
+         <y>0</y>
+         <width>61</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>NFM</string>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="spinCenter">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>40</y>
+         <width>171</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="maximum">
+        <number>1999999999</number>
+       </property>
+       <property name="singleStep">
+        <number>1000</number>
+       </property>
+       <property name="value">
+        <number>89300000</number>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_3">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>40</y>
+         <width>111</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Center:</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="comboDirectSamp">
+       <property name="geometry">
+        <rect>
+         <x>300</x>
+         <y>42</y>
+         <width>301</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <item>
+        <property name="text">
+         <string>Quadrature sampling</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Direct sampling (I branch)</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Direct sampling (Q branch)</string>
+        </property>
+       </item>
+      </widget>
+      <widget class="QPushButton" name="toggleTransmit">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>450</x>
+         <y>80</y>
+         <width>151</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Transmit</string>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_4">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>120</y>
+         <width>121</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Samp. rate:</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="comboSampRate">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>120</y>
+         <width>171</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <item>
+        <property name="text">
+         <string>4000000</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>2000000</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>1200000</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>1024000</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>960000</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>480000</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>240000</string>
+        </property>
+       </item>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>QMySpectrumWidget</class>
+   <extends>QWidget</extends>
+   <header>qmyspectrumwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
