@@ -46,11 +46,11 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define CMD_MOD_LSB "pgroup -9 bash -c \"(for anything in {0..10}; do ncat 127.0.0.1 4951; sleep .3; done) | csdr convert_s8_f | csdr shift_addition_cc --fifo %FIFO% | csdr fir_decimate_cc %DECIM% 0.005 HAMMING | csdr bandpass_fir_fft_cc -0.1 0 0.05 | csdr realpart_cf | csdr agc_ff | csdr limit_ff | csdr convert_f_i16 |         %AUDIOPLAYER%\""
 #define CMD_FFT     "pgroup -9 bash -c \"(for anything in {0..10}; do ncat 127.0.0.1 4951; sleep .3; done) | csdr convert_s8_f | csdr fft_cc 2048 %FFT_READ_SIZE% | csdr logpower_cf -70 | csdr fft_exchange_sides_ff 2048\""
 
-#define CMD_ARECORD "arecord -D default -f S16_LE -r 44100 -c 1"
+#define CMD_ARECORD "arecord -D default -f S16_LE -r 40000 -c 1"
 
-#define CMD_TX_WFM  "pgroup  bash -c \"%ARECORD% | hackrf_tx  -g 32 -f %TXFREQ% -w - -m 0\""
-#define CMD_TX_NFM  "pgroup  bash -c \"%ARECORD% | hackrf_tx  -g 32 -f %TXFREQ% -w - -m 1\""
-#define CMD_TX_AM   "pgroup  bash -c \"%ARECORD% | hackrf_tx  -g 32 -f %TXFREQ% -w - -m 2\""
+#define CMD_TX_WFM  "pgroup bash -c \"%ARECORD% | hackrf_tx  -g 32 -f %TXFREQ% -w - -m 0\""
+#define CMD_TX_NFM  "pgroup bash -c \"%ARECORD% | hackrf_tx  -g 32 -f %TXFREQ% -w - -m 1\""
+#define CMD_TX_AM   "pgroup bash -c \"%ARECORD% | hackrf_tx  -g 32 -f %TXFREQ% -w - -m 2\""
 #define CMD_TX_USB  "pgroup bash -c \"%ARECORD% | csdr convert_i16_f | csdr dsb_fc   | csdr bandpass_fir_fft_cc 0 0.1 0.01 | csdr gain_ff 2 | csdr shift_addition_cc 0.2 | hackrf_transfer -x32 -f %TXFREQ_SSB% -t -\""
 #define CMD_TX_LSB  "pgroup bash -c \"%ARECORD% | csdr convert_i16_f | csdr dsb_fc   | csdr bandpass_fir_fft_cc -0.1 0 0.01 | csdr gain_ff 2 | csdr shift_addition_cc 0.2 |hackrf_transfer -x32 -f %TXFREQ_SSB% -t -\""
 
